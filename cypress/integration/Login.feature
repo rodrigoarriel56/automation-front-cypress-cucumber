@@ -1,11 +1,11 @@
-Feature: Login site CWI
+Feature: Login site VR
 
-    Background: Acessar o site da CWI
+    Background: Acessar site da VR Beneficios
         Given acessar site VR
 
     @testeum
     Scenario: Visualizar opção de recuperar senha esquecida
-        When acesso a pagina de login
+        When acessar pagina de login
         Then devo visualizar botao de recuperar senha esquecida
 
     @testedois

@@ -15,6 +15,40 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+const cucumber = require('cypress-cucumber-preprocessor').default;
+
+module.exports = (on, config) => {
+
+  on('file:preprocessor', cucumber());
+
+};
+const { defineConfig } = require('cypress')
+
+module.exports = defineConfig({
+
+  'cypress-cucumber-preprocessor': {
+
+    nonGlobalStepDefinitions: false,
+
+    step_definitions: './cypress/integration/**',
+
+  },
+
+  cypress: {
+
+    setupNodeEvents(on, config) {
+
+      return require('./cypress/support/index.js')(on, config)
+
+    },
+
+    specPattern: 'cypress/integration/**.feature',
+
+    supportFile:false
+
+  },
+
+})
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

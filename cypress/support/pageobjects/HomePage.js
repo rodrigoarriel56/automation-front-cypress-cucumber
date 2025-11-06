@@ -7,12 +7,8 @@ const homeElements = new HomeElements
 const url = Cypress.config("baseUrl")
 
 class HomePage {
-    // Acessa o site que será testado
-    acessarSite() {
-        cy.visit(url)
-    }
-
-    // Validar botão de Compre online"
+    
+    // Validar Mensagens do botão de Compre online"
     visualizarMensagem() {
         cy.get(homeElements.mensagemSucesso()).should('contain', 'Compre online')
     }
@@ -43,7 +39,5 @@ class HomePage {
     }
     
 }
-    
-//}
 
 export default HomePage;
